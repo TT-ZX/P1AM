@@ -1372,7 +1372,7 @@ char *P1AM::loadConfigBuf(int moduleID){
 bool P1AM::handleHDR(uint8_t HDR){
 
 	while(!digitalRead(slaveAckPin));		//Wait for Base Controller to be out of base scanning
-	spiSendRecvByte(HDR);					//Send intital Header to ping DMA
+	spiSendRecvByte(HDR);					//Send initial Header to ping DMA
 
 	return spiTimeout(MAX_TIMEOUT,HDR,2000);		//1 if we got Base Controller ack, 0 if we took too long
 }
